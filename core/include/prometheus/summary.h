@@ -8,8 +8,8 @@
 #include "prometheus/metric.h"
 #include "prometheus/family.h"
 
-#include "prometheus/detail/ckms_quantiles.h"
-#include "prometheus/detail/time_window_quantiles.h"
+#include "prometheus/ckms_quantiles.h"
+#include "prometheus/time_window_quantiles.h"
 
 #include "prometheus/builder.h"
 
@@ -39,7 +39,7 @@ namespace prometheus {
   ///
   /// The class is thread-safe. No concurrent call to any API of this type causes
   /// a data race.
-  class Summary : Metric {
+  class Summary : public Metric {
 
   public:
 
